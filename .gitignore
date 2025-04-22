@@ -1,2 +1,2 @@
-key.json
-secrets.toml
+config/key.json
+dashboard/.streamlit/secrets.toml
