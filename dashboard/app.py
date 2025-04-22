@@ -11,11 +11,8 @@ st.set_page_config(page_title="YouTube Firestore Analytics", layout="wide")
 # Display progress message
 with st.spinner("📡 Collecting data..."):
     # Firestore credentials and client
-    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    FIREBASE_KEY = os.path.join(BASE_DIR, "config", "key.json")
-    credentials = service_account.Credentials.from_service_account_file(FIREBASE_KEY)
+    credentials = service_account.Credentials.from_service_account_info(st.secrets["firebase"])
     db = firestore.Client(credentials=credentials)
-
     # Country-wise collections
     country_collections = ['USvideos', 'CAvideos', 'INvideos', 'DEvideos']
 
