@@ -2,3 +2,7 @@ firebase-admin
 streamlit
 pandas
 matplotlib
+chardet
+plotly
+google-cloud-firestore
+seaborn
