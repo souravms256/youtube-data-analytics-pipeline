@@ -3,16 +3,19 @@ from google.cloud import firestore
 from google.oauth2 import service_account
 import pandas as pd
 import plotly.express as px
-import os
 
 # Set wide layout
 st.set_page_config(page_title="YouTube Firestore Analytics", layout="wide")
 
 # Display progress message
 with st.spinner("📡 Collecting data..."):
-    # Firestore credentials and client
-    credentials = service_account.Credentials.from_service_account_info(st.secrets["firebase"])
-    db = firestore.Client(credentials=credentials)
+    # Load credentials from Streamlit secrets
+    firebase_creds = st.secrets["firebase"]
+    credentials = service_account.Credentials.from_service_account_info(firebase_creds)
+
+    # Initialize Firestore DB
+    db = firestore.Client(credentials=credentials, project=firebase_creds["project_id"])
+
     # Country-wise collections
     country_collections = ['USvideos', 'CAvideos', 'INvideos', 'DEvideos']
 
