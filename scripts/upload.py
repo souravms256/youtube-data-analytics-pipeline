@@ -40,7 +40,7 @@ CLEANED_DIR = os.path.join(BASE_DIR, "cleaned")
 FIREBASE_KEY = os.path.join(BASE_DIR, "config", "key.json")
 
 # Limit to only 3 countries excluding US
-selected_countries = ['CA', 'DE', 'IN', 'US']
+selected_countries = ['DE', 'IN', 'US','CA']
 
 # Regex to match titles starting with A–Z (case-insensitive)
 alphabet_pattern = re.compile(r'^[A-Za-z]')
@@ -60,7 +60,7 @@ for code in selected_countries:
         df = df[df['title'].apply(lambda x: bool(alphabet_pattern.match(str(x))))]
 
         # Limit to 1000 records
-        df = df.head(1000)
+        df = df.head(500)
 
         upload_to_firestore(f"{code}videos", df)
     except Exception as e:
