@@ -1,2 +1,3 @@
-./config/key.json
-./dashboard/.streamlit/secrets.toml
+# Ignore secrets and keys
+config/key.json
+dashboard/.streamlit/secrets.toml

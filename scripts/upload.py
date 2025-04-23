@@ -40,7 +40,7 @@ CLEANED_DIR = os.path.join(BASE_DIR, "cleaned")
 FIREBASE_KEY = os.path.join(BASE_DIR, "config", "key.json")
 
 # Limit to only 3 countries excluding US
-selected_countries = ['CA', 'DE', 'IN']
+selected_countries = ['CA', 'DE', 'IN', 'US']
 
 # Regex to match titles starting with A–Z (case-insensitive)
 alphabet_pattern = re.compile(r'^[A-Za-z]')
