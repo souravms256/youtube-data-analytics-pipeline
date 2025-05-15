@@ -8,7 +8,7 @@ import json
 from datetime import datetime
 
 # Set wide layout
-st.set_page_config(page_title="YouTube Firestore Analytics", layout="wide")
+st.set_page_config(page_title="Firestore YouTube Analytics Pipeline", layout="wide")
 
 # ---------- Firebase Firestore Setup ----------
 with st.spinner("📡 Collecting data..."):
@@ -87,7 +87,7 @@ if not use_complete_data:
         filtered_df = filtered_df[filtered_df["publish_time"].dt.date == selected_date]
 
 # ---------- Main Dashboard Section ----------
-st.title("🎬 YouTube Firestore Analytics Dashboard")
+st.title("🎬 Firestore YouTube Analytics Pipeline Dashboard")
 st.markdown("Get insights from YouTube trending data across **US**, **Canada**, **India**, and **Denmark**")
 
 # Ensure numeric fields
